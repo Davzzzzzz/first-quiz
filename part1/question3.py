@@ -26,19 +26,26 @@
 # formulas and their outputs in the test file, `question3_test.py`.
 
 # This function should return an oven instance!
-def make_oven():
-  None
-
+def agregar(self,elemento):
+  self.ingredients.append(elemento)
+def congelar(self):
+  self.output = "congelado"
+def hervir(self):
+  self.output="hervido"
+def esperar(self):
+  if "cheese" in self.ingredients and "dough" in self.ingredients and "tomato" in self.ingredients:
+    self.output= "pizza"
+def get_output(self):
+  return self.output
+  def make_oven():
+  return oven()
 def alchemy_combine(oven, ingredients, temperature):
-  
-  for item in ingredients:
-    oven.add(item)
-
-  if temperature < 0:
-    oven.freeze()
-  elif temperature >= 100:
-    oven.boil()
-  else:
-    oven.wait()
-
-  return oven.get_output()
+    for item in ingredients:
+    oven.agregar(item)
+if temperature < 0:
+    oven.congelar()
+elif temperature >= 100:
+    oven.hervir()
+else:
+    oven.esperar()
+return oven.get_output()
